@@ -1,0 +1,48 @@
+Profiler
+========
+Simple program to profile different routines.
+
+How to build
+============
+make
+
+How to profile
+==============
+sudo perf stat profiling plane 100000000
+sudo perf stat profiling multiplication 100000000
+
+Results
+=======
+```
+Performance counter stats for './profiling plane 100000000':
+
+      1566,647362      task-clock (msec)         #    0,999 CPUs utilized
+               10      context-switches          #    0,006 K/sec
+                0      cpu-migrations            #    0,000 K/sec
+               49      page-faults               #    0,031 K/sec
+    5.084.993.390      cycles                    #    3,246 GHz
+   11.402.476.793      instructions              #    2,24  insn per cycle
+    1.200.437.331      branches                  #  766,246 M/sec
+           17.881      branch-misses             #    0,00% of all branches
+
+      1,567473811 seconds time elapsed
+```
+
+```
+Performance counter stats for './profiling multiplication 100000000':
+
+       995,525890      task-clock (msec)         #    0,992 CPUs utilized
+               46      context-switches          #    0,046 K/sec
+                0      cpu-migrations            #    0,000 K/sec
+               46      page-faults               #    0,046 K/sec
+    3.147.451.214      cycles                    #    3,162 GHz
+    9.501.888.995      instructions              #    3,02  insn per cycle
+      300.338.547      branches                  #  301,688 M/sec
+           14.823      branch-misses             #    0,00% of all branches
+
+      1,003111881 seconds time elapsed
+```
+
+License
+=======
+GNU GPL 2.0 (it uses Blender code in utils.c)
