@@ -19,8 +19,8 @@ MINLINE float plane_point_side_v3(const float plane[4], const float co[3])
 
 float dist_signed_squared_to_plane_v3(const float pt[3], const float plane[4])
 {
-	const float len_sq = len_squared_v3(plane);
-	const float side = plane_point_side_v3(plane, pt);
+	const float len_sq = plane[0] * plane[0] + plane[1] * plane[1] + plane[2] * plane[2];
+	const float side = pt[0] * plane[0] + pt[1] * plane[1] + pt[2] * plane[2] + plane[3];
 	const float fac = side / len_sq;
 	return copysignf(len_sq * (fac * fac), side);
 }
