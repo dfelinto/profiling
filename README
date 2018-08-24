@@ -13,6 +13,12 @@ sudo perf stat profiling multiplication 100000000
 
 Results
 =======
+Hardware:
+Dell XPS 15 9550 - InfinityEdge FHD / i7-6700HQ 2.6GHz-3.5GHz / GTX 960M 2GB / 16GB RAM / 512GB PCIe SSD.
+
+Software:
+Ubuntu 18.04 - 4.15.0-32-generic
+
 ```
 Performance counter stats for './profiling plane 100000000':
 
